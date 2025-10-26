@@ -1,11 +1,11 @@
-## Project Overview
+# Project Overview
 
 This service provides product catalog management capabilities including attribute listings and category tree structures.
 The application is containerized for easy deployment and includes comprehensive testing and documentation.
 
 ⸻
 
-# 🚀 Quick Start
+## 🚀 Quick Start
 
 Prerequisites
 • Docker and Docker Compose
@@ -49,7 +49,7 @@ This will:
 
 ⸻
 
-# 🧪 Testing
+## 🧪 Testing
 
 Run Test Suite
 
@@ -65,7 +65,7 @@ The test suite includes:
 
 ⸻
 
-# 📘 API Documentation
+## 📘 API Documentation
 
 Available Endpoints
 
@@ -99,7 +99,7 @@ GET /categories/tree
 
 ⸻
 
-# 🏗️ Architecture & Considerations
+## 🏗️ Architecture & Considerations
 
 Metrics & Monitoring  
 • Application Metrics: Track request rates, response times, and error rates  
@@ -109,16 +109,15 @@ Metrics & Monitoring
 Caching Strategy  
 • Centralized cache manager is used to store frequently accessed data, minimizing redundant computations — particularly for operations with heavy processing or expensive queries.  
 • The default cache duration is set to 5 seconds globally, while certain API endpoints are individually configured with extended lifetimes of up to 30 seconds, depending on data volatility and usage patterns.  
-• Future optimization: Integrate Redis for enhanced scalability and distributed caching, following a two-layer architecture:  
-  • L1: In-memory cache for high-frequency, low-latency data (e.g., product attributes)  
+• Future optimization: Integrate Redis for enhanced scalability and distributed caching, following a two-layer architecture:    
+  • L1: In-memory cache for high-frequency, low-latency data (e.g., product attributes)    
   • L2: Distributed Redis cache for more complex or hierarchical data (e.g., category trees)  
 
 Scalability Considerations  
 • Horizontal scaling with stateless application design  
-• Database optimization:  
-  • Read replicas for heavy read operations (category trees)  
-  • Connection pooling and query optimization  
-  • indexing on frequently queried fields (category hierarchies, attribute names)  
 • CDN integration for static category structures  
 • Rate limiting and API throttling  
-• Database  
+• Database optimization:    
+  • Read replicas for heavy read operations (category trees)    
+  • Connection pooling and query optimization    
+  • indexing on frequently queried fields (category hierarchies, attribute names)  
